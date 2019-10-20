@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1;
+
+service PostData {
+  rpc PostTemperature(SensorData) returns (DataResponse) {}
+  rpc PostHumidity(SensorData) returns (DataResponse) {}
+}
+
+message SensorData {
+  string sensorId = 1;
+  float value = 2;
+}
+
+message DataResponse {
+  bool ok = 1;
+}
