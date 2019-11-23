@@ -23,7 +23,7 @@ type view struct {
 func (v *view) index(w http.ResponseWriter, r *http.Request) {
 	var s string
 	for key, value := range v.temperatureData {
-		s += fmt.Sprintf("%v=\"%v\"\n", key, value)
+		s += fmt.Sprintf("Sensor %v: %v\n", key, value)
 	}
 
 	w.Write([]byte(s)) // Ugh
